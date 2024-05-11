@@ -16,6 +16,7 @@ const Home = async () => {
   const { sliders, features, popularBlogs, latestBlogs } = await getData();
 
   console.log(popularBlogs);
+  console.log("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+"); //
 
   return (
     <div>
