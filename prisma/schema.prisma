@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model socials {
+  id Int @id @default(autoincrement())
+  facebook String @db.VarChar(255)
+  youtube String @db.VarChar(255)
+  linkedin String @db.VarChar(255)
+  x String @db.VarChar(255)
+  about String @db.Text
+  address String @db.Text
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @default(now()) @db.Timestamp(0)
+}
+
+model categories {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(100)
+  blog_list blog_list[]
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @default(now()) @db.Timestamp(0)
+}
+
+model blog_list {
+  id Int @id @default(autoincrement())
+  title String @db.VarChar(255)
+  short_description String @db.VarChar(500)
+  image_1 String @db.VarChar(255)
+  image_2 String @db.VarChar(255)
+  image_3 String @db.VarChar(255)
+  image_4 String @db.VarChar(255)
+  long_description String @db.LongText
+  keywords String @db.VarChar(255)
+  type String @db.VarChar(255)
+  cat_id Int
+  categories categories @relation(fields: [cat_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  created_at DateTime @default(now()) @db.Timestamp(0)
+  updated_at DateTime @updatedAt @default(now()) @db.Timestamp(0)
+}
