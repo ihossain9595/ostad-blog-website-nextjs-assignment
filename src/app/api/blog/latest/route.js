@@ -3,11 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(request, response) {
   try {
-    const { searchParams } = new URL(request.url);
-    const type = searchParams.get("type");
-
     const prisma = new PrismaClient();
-    const result = await prisma.blog_list.findMany({ where: { type: type }, select: { id: true, title: true, short_description: true, image_1: true, image_2: true, image_3: true, image_4: true } });
+    const result = await prisma.blog_list.findMany({ take: 30, select: { id: true, title: true, short_description: true, image_1: true, image_2: true, image_3: true, image_4: true } });
 
     return NextResponse.json({ status: "success", data: result });
   } catch (error) {

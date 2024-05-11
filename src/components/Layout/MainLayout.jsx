@@ -15,12 +15,9 @@ const MainLayout = async ({ children }) => {
   return (
     <div>
       <Header socials={socials} categories={categories} />
-
       {children}
-
-      <Toaster position="bottom-center" />
-
       <Footer socials={socials} categories={categories} />
+      <Toaster position="bottom-center" />
     </div>
   );
 };
