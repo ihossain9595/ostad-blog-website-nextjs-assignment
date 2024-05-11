@@ -1,7 +1,11 @@
+import MainLayout from "@/components/Layout/MainLayout";
+
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <MainLayout>
+        <h1>Home</h1>
+      </MainLayout>
     </div>
   );
 };
