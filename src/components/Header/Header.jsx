@@ -5,7 +5,7 @@ import { Nav, Navbar } from "react-bootstrap";
 import Link from "next/link";
 
 const Header = ({ socials, categories }) => {
-  let [keyword, SetKeyword] = useState("");
+  let [keyword, setKeyword] = useState("");
 
   const currentDate = new Date();
 
@@ -66,7 +66,7 @@ const Header = ({ socials, categories }) => {
               <div className="input-group">
                 <input
                   onChange={(e) => {
-                    SetKeyword(e.target.value);
+                    setKeyword(e.target.value);
                   }}
                   type="text"
                   className="form-control"
