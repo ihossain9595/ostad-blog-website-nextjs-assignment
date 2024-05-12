@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SubmitButton from "@/components/master/SubmitButton";
+import SubmitButton from "@/components/Global/SubmitButton";
 import { ErrorToast, IsEmail, SuccessToast } from "@/utility/FormHelper";
 
 const Subscribe = () => {
