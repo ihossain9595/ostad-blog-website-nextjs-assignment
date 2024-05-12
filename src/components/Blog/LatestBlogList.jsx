@@ -15,7 +15,7 @@ const LatestBlogList = ({ latestBlogs }) => {
                 <p className="my-2 fw-bold p-0">
                   <i className="bi bi-clock"></i> 3 Days Ago
                 </p>
-                <Link href={`/blog/details?id=${item["id"]}`} className="btn mt-2 btn-sm btn-outline-danger">
+                <Link href={`/details?id=${item["id"]}`} className="btn mt-2 btn-sm btn-outline-danger">
                   Read More
                 </Link>
               </div>
